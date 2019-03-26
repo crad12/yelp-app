@@ -1,0 +1,31 @@
+<div style="text-align:center" id="body">
+  <br>
+  <br>
+  <Br>
+    <h1>Yelp Search</h1>
+ 
+  
+  
+    <select [(ngModel)]="dropdown" class="dropdown">
+      <option value="1">$</option>
+      <option value="2">$$</option>
+      <option value="3">$$$</option>
+      <option value="4">$$$$</option>
+    </select>
+
+    <input type="text" placeholder="city" [(ngModel)]="location">
+
+    <button (click)="onClick()">Submit</button>
+
+    <div *ngIf="business != null" >
+      {{ business.name }} <br> 
+      {{ business.location.display_address }} <br>
+      {{ business.phone }}<br>
+      {{ business.rating }}<br>
+      {{ (business.transactions.indexOf('delivery') > -1) ? 'delivers' : 'Does not deliver' }} <br>
+      <img [src]="business.image_url"> <br>
+
+    </div>
+    
+
+    

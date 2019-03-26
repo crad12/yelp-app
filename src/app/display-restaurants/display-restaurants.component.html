@@ -1,0 +1,19 @@
+<form [formGroup]="searchAPI" (ngSubmit)="onSearchAPI()">
+  <label for="searchTerm">Search</label>
+  <input
+  type="text"
+  name="searchTerm"
+  formControlName="searchTerm"
+  required>
+  <label for="searchArea"> Category</label>
+  <select
+  name="searchArea"
+  formControlName="searchArea"
+  required>
+<option *ngFor = "let searchArea of searchArea" value="{{searchArea}}">{{searchArea}}</option>
+</select>
+<button type="submit">Search</button>
+</form>
+
+
+{{ yelpData | json }}
